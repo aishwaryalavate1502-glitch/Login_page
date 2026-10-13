@@ -1,0 +1,163 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd1e8,
+        #ff69b4,
+        #ff1493
+    );
+}
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #ff9dce;
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(180, 0, 90, 0.25);
+
+    animation: appear 0.8s ease;
+}
+
+.logo {
+    color: #ff1493;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #b85c8e;
+    margin-bottom: 25px;
+}
+
+.input-box {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b03070;
+    font-weight: bold;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px;
+
+    border: 2px solid #ffc1df;
+    border-radius: 12px;
+
+    background: #fff8fc;
+    font-size: 15px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #ff1493;
+    box-shadow: 0 0 8px #ffc1df;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #ff1493,
+        #ff69b4
+    );
+
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px #ffb6d9;
+}
+
+#message {
+    margin-top: 15px;
+    color: #d63384;
+    font-size: 14px;
+}
+
+.signup {
+    margin-top: 22px;
+    color: #8e4770;
+    font-size: 14px;
+}
+
+.signup a {
+    color: #ff1493;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    margin-top: 22px;
+    color: #ff1493;
+    font-size: 15px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 420px) {
+    .login-container {
+        padding: 25px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+}
