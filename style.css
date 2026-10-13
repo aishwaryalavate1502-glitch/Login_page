@@ -1,4 +1,5 @@
-
+```css
+/* ===== General Styling ===== */
 * {
     margin: 0;
     padding: 0;
@@ -12,114 +13,160 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-x: hidden;
 
-    background: linear-gradient(
-        135deg,
-        #ffd1e8,
-        #ff69b4,
-        #ff1493
-    );
+    background:
+        radial-gradient(circle at 15% 20%, #fff0f7, transparent 30%),
+        radial-gradient(circle at 85% 80%, #ff9bd2, transparent 35%),
+        linear-gradient(135deg, #ffb6d9, #ff69b4, #e90074);
 }
 
+/* ===== Login Card ===== */
 .login-container {
     width: 100%;
-    max-width: 380px;
-    padding: 35px;
+    max-width: 390px;
+    padding: 38px 32px;
 
-    background: rgba(255, 255, 255, 0.95);
-    border: 3px solid #ff9dce;
-    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(15px);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
 
     text-align: center;
 
-    box-shadow: 0 15px 40px rgba(180, 0, 90, 0.25);
+    box-shadow:
+        0 20px 50px rgba(173, 0, 91, 0.25),
+        0 0 25px rgba(255, 255, 255, 0.4);
 
-    animation: appear 0.8s ease;
+    animation: cardEntrance 0.8s ease-out;
+    transition: box-shadow 0.3s ease;
 }
 
+.login-container:hover {
+    box-shadow:
+        0 25px 60px rgba(173, 0, 91, 0.35),
+        0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Barbie Logo ===== */
 .logo {
-    color: #ff1493;
-    font-size: 42px;
-    font-weight: bold;
+    font-size: 46px;
+    font-weight: 900;
     font-style: italic;
+    color: #ff1493;
     margin-bottom: 15px;
+
+    text-shadow: 2px 3px 0 #ffc1df;
+    animation: logoGlow 2s ease-in-out infinite alternate;
 }
 
+/* ===== Heading ===== */
 h2 {
-    color: #d63384;
+    color: #c21870;
+    font-size: 27px;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #b85c8e;
-    margin-bottom: 25px;
+    color: #a8477c;
+    font-size: 14px;
+    margin-bottom: 28px;
 }
 
+/* ===== Input Fields ===== */
 .input-box {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .input-box label {
     display: block;
-    margin-bottom: 8px;
-    color: #b03070;
+    margin-bottom: 9px;
+    color: #9c2767;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .input-box input {
     width: 100%;
-    padding: 13px;
+    padding: 14px 15px;
 
-    border: 2px solid #ffc1df;
-    border-radius: 12px;
+    border: 2px solid #ffc0df;
+    border-radius: 14px;
 
-    background: #fff8fc;
+    background: rgba(255, 255, 255, 0.85);
+    color: #782052;
     font-size: 15px;
-    outline: none;
 
-    transition: 0.3s;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: #c58aa9;
 }
 
 .input-box input:focus {
     border-color: #ff1493;
-    box-shadow: 0 0 8px #ffc1df;
+    background: white;
+
+    box-shadow: 0 0 0 4px rgba(255, 20, 147, 0.12);
+
+    transform: scale(1.02);
 }
 
+/* ===== Login Button ===== */
 button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 15px;
 
     background: linear-gradient(
-        90deg,
+        100deg,
         #ff1493,
-        #ff69b4
+        #ff69b4,
+        #ff1493
     );
+
+    background-size: 200% auto;
 
     color: white;
     font-size: 17px;
     font-weight: bold;
-    cursor: pointer;
+    letter-spacing: 1px;
 
-    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
+
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px #ffb6d9;
+    background-position: right center;
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(255, 20, 147, 0.4);
 }
 
+button:active {
+    transform: scale(0.97);
+}
+
+/* ===== Message ===== */
 #message {
     margin-top: 15px;
-    color: #d63384;
+    color: #c21870;
     font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
+/* ===== Sign Up Link ===== */
 .signup {
-    margin-top: 22px;
+    margin-top: 25px;
     color: #8e4770;
     font-size: 14px;
 }
@@ -128,36 +175,79 @@ button:hover {
     color: #ff1493;
     font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .signup a:hover {
+    color: #c00068;
     text-decoration: underline;
 }
 
+/* ===== Footer ===== */
 .footer {
-    margin-top: 22px;
+    margin-top: 25px;
     color: #ff1493;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
-@keyframes appear {
+/* ===== Animations ===== */
+@keyframes cardEntrance {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(35px) scale(0.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
-@media (max-width: 420px) {
+@keyframes logoGlow {
+    from {
+        text-shadow: 2px 3px 0 #ffc1df;
+    }
+
+    to {
+        text-shadow:
+            2px 3px 0 #ffc1df,
+            0 0 18px rgba(255, 20, 147, 0.35);
+    }
+}
+
+/* ===== Mobile Responsive Design ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
     .login-container {
-        padding: 25px;
+        padding: 30px 22px;
+        border-radius: 24px;
     }
 
     .logo {
-        font-size: 36px;
+        font-size: 39px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .input-box input {
+        padding: 12px;
     }
 }
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+```
